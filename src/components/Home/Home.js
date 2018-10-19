@@ -8,7 +8,7 @@ class Home extends Component {
     render() {
         return(
             <div>
-                Hello world!
+                App is working!
             </div>
         )
     }
