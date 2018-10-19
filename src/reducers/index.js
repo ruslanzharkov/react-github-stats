@@ -2,7 +2,7 @@ import { combineReducers } from 'redux';
 
 
 const reducers = combineReducers({
-    books: {},
+    userStat: {},
 });
 
 export default reducers;
