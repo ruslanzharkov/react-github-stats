@@ -1,0 +1,1 @@
+export const GET_USER_STARRED = 'GET_USER_STARRED';
