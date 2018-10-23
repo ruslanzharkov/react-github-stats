@@ -6,6 +6,5 @@ export const configureStore = () => {
     return createStore(
         reducers,
         applyMiddleware(thunk)
-        
     );
 }

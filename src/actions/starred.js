@@ -3,13 +3,13 @@ import axios from 'axios';
 import {apiURL} from '../etc/api';
 
 export const getUserStarred = (userName) => {
+    return (dispatch) => {
         axios.get(`${apiURL}/users/${userName}/starred`)
-            .then(res => {
-                console.log(res.data)
-            //    return {
-            //         type: actionTypes.GET_USER_STARRED,
-            //         userStarred: res.data
-            //    } 
+        .then(res => {
+            dispatch({
+                type: actionTypes.GET_USER_STARRED,
+                payload: res.data
             })
-    
+        })
+    }
 }

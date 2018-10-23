@@ -9,16 +9,16 @@ class StarredScreen extends Component {
     render() {
       return (
         <Starred 
-          userStarred={this.props.userStarred}
+          userStars={this.props.userStars}
           getUserStarred={this.props.getUserStarred}
         />
       )
     }
   }
   
-  function mapStateToProps ({userStarred}) {
+  function mapStateToProps ({userStars}) {
     return {
-      userStarred: userStarred
+      userStars: userStars
     };
   };
   

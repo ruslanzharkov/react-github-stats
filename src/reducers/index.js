@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-
+import {starsStat} from './starred';
 
 const reducers = combineReducers({
-    userStat: {},
+    userStars: starsStat,
 });
 
 export default reducers;
