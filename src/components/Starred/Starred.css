@@ -1,0 +1,17 @@
+.starred-container {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    padding: 50px;
+}
+
+.input {
+    width: 340px;
+    height: 40px;
+    margin: 5px;
+    border-radius: 15px;
+}
+
+.button {
+    width: 80px;
+}

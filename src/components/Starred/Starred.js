@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Input from '../_common/Input';
+import './Starred.css'
 
 class Starred extends Component {
     constructor(props) {
@@ -20,15 +21,15 @@ class Starred extends Component {
 
     render() {
         return(
-            <div className={'Container'}>
-                <Input onChange={this.onChange} value={this.state.user}/>
+            <div className='starred-container'>
+                <Input onChange={this.onChange} value={this.state.user} style='input'/>
                 <button onClick={this.onSubmit}>Click me</button>
             </div>
         )
     }
 }
 
-Starred.propTypes ={
+Starred.propTypes = {
     getUserStarred: PropTypes.func
 }
 
