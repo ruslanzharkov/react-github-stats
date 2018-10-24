@@ -7,8 +7,16 @@ class Starred extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            user: ''
+            user: '',
+            userStars: []
         };
+    }
+
+    componentWillReceiveProps(nextProps) {
+        if (this.props.userStars !== nextProps.userStars)
+            this.setState({
+                userStars: nextProps.userStars
+            })
     }
 
     onChange = (event) => {
@@ -19,11 +27,28 @@ class Starred extends Component {
         this.props.getUserStarred(this.state.user);
     }
 
+    renderStarInfo = () => {
+        if (!this.state.userStars)
+            return null;
+
+        return (
+            <div>
+                <ol>
+                    {this.state.userStars.map(item => 
+                        <li>{item.name}</li>
+                    )}
+                </ol>
+                
+            </div>
+        )
+    }
+
     render() {
         return(
             <div className='starred-container'>
                 <Input onChange={this.onChange} value={this.state.user} style='input'/>
                 <button onClick={this.onSubmit}>Click me</button>
+                {this.renderStarInfo()}
             </div>
         )
     }
