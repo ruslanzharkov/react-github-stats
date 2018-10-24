@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Input from '../_common/Input';
+import Input from '../_common/Input/Input';
 import './Starred.css'
+import Button from '../_common/Button';
 
 class Starred extends Component {
     constructor(props) {
@@ -48,7 +49,7 @@ class Starred extends Component {
         return(
             <div className='starred-container'>
                 <Input onChange={this.onChange} value={this.state.user} style='input'/>
-                <button onClick={this.onSubmit}>Click me</button>
+                <Button onClick={this.onSubmit} value={'Search user stars'}/>
                 {this.renderStarInfo()}
             </div>
         )
