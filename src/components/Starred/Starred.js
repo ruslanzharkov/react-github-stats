@@ -17,6 +17,7 @@ class Starred extends Component {
             return{
                 userStars: nextProps.userStars
             }
+        return null;
     }
 
     onChange = (event) => {
