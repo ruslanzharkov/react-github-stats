@@ -12,11 +12,11 @@ class Starred extends Component {
         };
     }
 
-    componentWillReceiveProps(nextProps) {
-        if (this.props.userStars !== nextProps.userStars)
-            this.setState({
+    static getDerivedStateFromProps(nextProps, prevState) {
+        if (nextProps.userStars !== prevState.userStars)
+            return{
                 userStars: nextProps.userStars
-            })
+            }
     }
 
     onChange = (event) => {
