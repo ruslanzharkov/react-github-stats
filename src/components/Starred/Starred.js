@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Input from '../_common/Input/Input';
+import Input from '../_common/Input/index';
 import './Starred.css'
 import Button from '../_common/Button';
 
