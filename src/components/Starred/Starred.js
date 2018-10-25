@@ -48,8 +48,8 @@ class Starred extends Component {
     render() {
         return(
             <div className='starred-container'>
-                <Input onChange={this.onChange} value={this.state.user} style='input'/>
-                <Button onClick={this.onSubmit} value={'Search user stars'}/>
+                <Input onChange={this.onChange} value={this.state.user} style='input-starred' placeholder='Write github username...'/>
+                <Button onClick={this.onSubmit} value={'Search user'} style='button-starred'/>
                 {this.renderStarInfo()}
             </div>
         )
