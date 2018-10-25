@@ -11,9 +11,11 @@ class Starred extends Component {
             user: '',
             userStars: []
         };
+        
     }
 
     static getDerivedStateFromProps(nextProps, prevState) {
+        console.log(nextProps.userStars)
         if (nextProps.userStars !== prevState.userStars)
             return{
                 userStars: nextProps.userStars
@@ -35,12 +37,12 @@ class Starred extends Component {
 
         return (
             <div>
-                <ol>
-                    {this.state.userStars.map(item => 
-                        <li>{item.name}</li>
-                    )}
-                </ol>
-                
+                {this.state.userStars.map(item => 
+                    <div>
+                        <p>{item.name}</p>
+                        <img src={item.owner.avatar_url} alt='avatar' className='avatars-github'/>
+                    </div>
+                )}
             </div>
         )
     }
