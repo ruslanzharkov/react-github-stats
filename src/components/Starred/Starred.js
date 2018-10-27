@@ -39,8 +39,13 @@ class Starred extends Component {
             <div>
                 {this.state.userStars.map(item => 
                     <div className="repo-item">
+                        <div className="block">
                             <div className="repo-name">{item.name}</div>
                             <div className="repo-image"><img src={item.owner.avatar_url} alt='avatar' className='avatars-github'/></div>
+                        </div>
+                        <div className="block">
+                            <div className="repo-name"><span className="stars">&#10029;</span> {item.stargazers_count}</div>
+                        </div>
                     </div>
                 )}
             </div>
