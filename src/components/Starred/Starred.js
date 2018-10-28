@@ -10,28 +10,45 @@ class Starred extends Component {
         this.state = {
             user: '',
             userStars: [],
+            paginationUserStars: [],
             itemsStart: 0,
-            itemsCount: 5,
+            itemsEnd: 6,
         };
         
     }
 
     static getDerivedStateFromProps(nextProps, prevState) {
         console.log(nextProps.userStars)
-        if (nextProps.userStars !== prevState.userStars)
+        if (nextProps.userStars !== prevState.userStars) {
             return{
                 userStars: nextProps.userStars
             }
+        }
+            
         return null;
     }
 
+    goNextPage = () => {
+        let userStars = this.state.userStars;
+        let paginationStars = userStars.slice(this.state.itemsStart, this.state.itemsEnd);
+        let itemsStart = this.state.itemsEnd;
+        let itemsEnd = this.state.itemsEnd;
+        itemsEnd += itemsEnd;
+
+        this.setState({
+            itemsStart: itemsStart,
+            itemsEnd: itemsEnd,
+            paginationUserStars: paginationStars
+        })
+    };
+
     onChange = (event) => {
         this.setState({user: event.target.value})
-    }
+    };
 
     onSubmit = () => {
         this.props.getUserStarred(this.state.user);
-    }
+    };
 
     renderStarInfo = () => {
         if (!this.state.userStars)
@@ -64,6 +81,7 @@ class Starred extends Component {
                 <Input onChange={this.onChange} value={this.state.user} style='input-starred' placeholder='Write github username...'/>
                 <Button onClick={this.onSubmit} value={'Search user'} style='button-starred'/>
                 {this.renderStarInfo()}
+                <Button onClick={this.goNextPage}><span className="arrow">&#8594;</span></Button>
             </div>
         )
     }
