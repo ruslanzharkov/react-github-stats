@@ -9,7 +9,9 @@ class Starred extends Component {
         super(props);
         this.state = {
             user: '',
-            userStars: []
+            userStars: [],
+            itemsStart: 0,
+            itemsCount: 5,
         };
         
     }
@@ -37,8 +39,8 @@ class Starred extends Component {
 
         return (
             <div>
-                {this.state.userStars.map(item => 
-                    <div className="repo-item">
+                {this.state.userStars.map((item, index) => 
+                    <div className="repo-item" key={index}>
                         <div className="content-about">
                             <div className="block">
                                 <div className="repo-name">{item.name}</div>
