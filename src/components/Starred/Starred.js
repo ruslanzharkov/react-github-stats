@@ -14,7 +14,7 @@ class Starred extends Component {
             userStars: [],
             paginationUserStars: [],
             itemsStart: 0,
-            itemsEnd: 6,
+            itemsEnd: 5,
         };
         
     }
@@ -28,6 +28,12 @@ class Starred extends Component {
         }
             
         return null;
+    }
+
+    componentDidUpdate(prevProps) {
+        if (this.state.userStars !== prevProps.userStars) {
+            this.goNextPage();
+        }
     }
 
     goNextPage = () => {
@@ -58,7 +64,7 @@ class Starred extends Component {
 
         return (
             <div>
-                {this.state.userStars.map((item, index) => 
+                {this.state.paginationUserStars.map((item, index) => 
                     <div className="repo-item" key={index}>
                         <div className="content-about">
                             <div className="block">
