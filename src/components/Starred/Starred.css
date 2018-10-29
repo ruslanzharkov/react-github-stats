@@ -69,3 +69,12 @@
 .content-about {
     padding: 20px 20px 20px 20px;
 }
+
+.button-arrow {
+    margin-top: 10px;
+    border-radius: 30px;
+}
+
+.arrow-icon {
+    font-size: 20px;
+}

@@ -61,8 +61,8 @@ class Starred extends Component {
     renderNextPageButton = () => {
         if (this.state.paginationUserStars.length > 0) {
             return (
-                <Button onClick={this.goNextPage}>
-                    Next page<span className="arrow">&#8594;</span>
+                <Button onClick={this.goNextPage} style="button-arrow">
+                    <span className="arrow-icon">&#8594;</span>
                 </Button>
             )
         }
