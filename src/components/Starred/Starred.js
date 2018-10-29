@@ -22,7 +22,7 @@ class Starred extends Component {
     static getDerivedStateFromProps(nextProps, prevState) {
         console.log(nextProps.userStars)
         if (nextProps.userStars !== prevState.userStars) {
-            return{
+            return {
                 userStars: nextProps.userStars
             }
         }
