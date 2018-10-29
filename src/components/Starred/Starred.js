@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Input from '../_common/Input/index';
-import './Starred.css'
+import Input from '../_common/Input';
 import Button from '../_common/Button';
+import Link from '../_common/Link';
+import './Starred.css'
+
 
 class Starred extends Component {
     constructor(props) {
@@ -66,6 +68,11 @@ class Starred extends Component {
                             <div className="block">
                                 <div className="repo-name">
                                     <span className="stars">&#10029;</span> {item.stargazers_count}
+                                </div>
+                            </div>
+                            <div className="block">
+                                <div className="repo-name">
+                                    <Link url={item.svn_url}>Link to repo</Link>
                                 </div>
                             </div>
                         </div>

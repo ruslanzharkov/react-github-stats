@@ -42,6 +42,7 @@
 
 .repo-name {
     float: left;
+    margin-bottom: 10px; 
 }
 
 .repo-image {
