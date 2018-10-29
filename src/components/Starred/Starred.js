@@ -15,6 +15,7 @@ class Starred extends Component {
             paginationUserStars: [],
             itemsStart: 0,
             itemsEnd: 5,
+            pageIncrement: 5
         };
         
     }
@@ -41,7 +42,7 @@ class Starred extends Component {
         let paginationStars = userStars.slice(this.state.itemsStart, this.state.itemsEnd);
         let itemsStart = this.state.itemsEnd;
         let itemsEnd = this.state.itemsEnd;
-        itemsEnd += itemsEnd;
+        itemsEnd += this.state.pageIncrement;
 
         this.setState({
             itemsStart: itemsStart,
