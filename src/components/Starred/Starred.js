@@ -56,6 +56,10 @@ class Starred extends Component {
     };
 
     onSubmit = () => {
+        this.setState({
+            itemsStart: 0,
+            itemsEnd: 5,
+        });
         this.props.getUserStarred(this.state.user);
     };
 
