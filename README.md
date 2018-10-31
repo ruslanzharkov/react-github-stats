@@ -1,1 +1,2 @@
-## Fun application on react/redux show github stats using their api
+## Fun application with React/Redux show github users stats using their api
+
