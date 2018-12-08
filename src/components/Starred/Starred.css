@@ -51,6 +51,7 @@
 }
 
 .repo-item {
+    background: #fff;
     box-shadow: 0 10px 50px rgba(27,31,35,0.07);
     border-radius: 10px;
     height: 200px;
