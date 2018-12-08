@@ -7,7 +7,7 @@ class Input extends Component {
                 type="text" 
                 value={this.props.value} 
                 onChange={this.props.onChange} 
-                className={this.props.style}
+                className={this.props.styles}
                 placeholder={this.props.placeholder}
             />
         )
