@@ -63,10 +63,19 @@ class Starred extends Component {
         if (this.state.paginationUserStars.length > 0) {
             return (
                 <Button onClick={this.goNextPage} style="button-arrow">
-                    <span className="arrow-icon">&#8594;</span>
+                    <span className="arrow-icon">→</span>
                 </Button>
             )
         }
+    };
+
+    renderPrevPageButton = () => {
+        if (this.state.paginationUserStars.length > 0)
+            return (
+                <Button onClick={this.goNextPage} style="button-arrow">
+                    <span className="arrow-icon">←</span>
+                </Button>
+            )
     };
 
     renderStarInfo = () => {
@@ -105,7 +114,10 @@ class Starred extends Component {
                 <Input onChange={this.onChange} value={this.state.user} style='input-starred' placeholder='Write github username...'/>
                 <Button onClick={this.onSubmit} value={'Search user'} style='button-starred'/>
                 {this.renderStarInfo()}
-                {this.renderNextPageButton()}
+                <div className={'pagination-buttons'}>
+                    {this.renderPrevPageButton()}
+                    {this.renderNextPageButton()}
+                </div>
             </div>
         )
     }
