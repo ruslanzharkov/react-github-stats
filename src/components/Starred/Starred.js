@@ -21,7 +21,6 @@ class Starred extends Component {
     }
 
     static getDerivedStateFromProps(nextProps, prevState) {
-        console.log(nextProps.userStars)
         if (nextProps.userStars !== prevState.userStars) {
             return {
                 userStars: nextProps.userStars
@@ -46,6 +45,18 @@ class Starred extends Component {
 
         this.setState({
             itemsStart: itemsStart,
+            itemsEnd: itemsEnd,
+            paginationUserStars: paginationStars
+        })
+    };
+
+    goPrevPage = () => {
+        let userStars = this.state.userStars;
+        let itemsStart = this.state.itemsEnd - this.state.pageIncrement;
+        let itemsEnd = this.state.itemsEnd - this.state.pageIncrement;
+        let paginationStars = userStars.slice(itemsStart, itemsEnd);
+        this.setState({
+            temsStart: itemsStart,
             itemsEnd: itemsEnd,
             paginationUserStars: paginationStars
         })
@@ -76,7 +87,7 @@ class Starred extends Component {
     renderPrevPageButton = () => {
         if (this.state.paginationUserStars.length > 0)
             return (
-                <Button onClick={this.goNextPage} styles={"button-arrow"}>
+                <Button onClick={this.goPrevPage} styles={"button-arrow"}>
                     <span className="arrow-icon">←</span>
                 </Button>
             )
