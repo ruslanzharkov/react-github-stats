@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import Starred from '../../components/Starred/Starred'
+import Starred from '../../components/Starred/StarredPage'
 import {ActionsCreators} from '../../actions/index';
 
 class StarredScreen extends Component {
