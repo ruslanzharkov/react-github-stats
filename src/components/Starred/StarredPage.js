@@ -5,7 +5,6 @@ import Button from '../_common/Button';
 import Link from '../_common/Link';
 import './Starred.css'
 
-
 class Starred extends Component {
     constructor(props) {
         super(props);
@@ -43,23 +42,28 @@ class Starred extends Component {
         let itemsEnd = this.state.itemsEnd;
         itemsEnd += this.state.pageIncrement;
 
-        this.setState({
-            itemsStart: itemsStart,
-            itemsEnd: itemsEnd,
-            paginationUserStars: paginationStars
-        })
+        if (itemsEnd !== this.state.userStars.length) {
+            this.setState({
+                itemsStart: itemsStart,
+                itemsEnd: itemsEnd,
+                paginationUserStars: paginationStars
+            })
+        }
     };
 
     goPrevPage = () => {
         let userStars = this.state.userStars;
         let itemsEnd = this.state.itemsEnd - this.state.pageIncrement;
         let itemsStart = itemsEnd - this.state.pageIncrement;
-        let paginationStars = userStars.slice(itemsStart, itemsEnd);
-        this.setState({
-            temsStart: itemsStart,
-            itemsEnd: itemsEnd,
-            paginationUserStars: paginationStars
-        })
+
+        if (itemsStart !== 0) {
+            let paginationStars = userStars.slice(itemsStart, itemsEnd);
+            this.setState({
+                temsStart: itemsStart,
+                itemsEnd: itemsEnd,
+                paginationUserStars: paginationStars
+            })
+        }
     };
 
     onChange = (event) => {
