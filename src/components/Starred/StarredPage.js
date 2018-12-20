@@ -52,8 +52,8 @@ class Starred extends Component {
 
     goPrevPage = () => {
         let userStars = this.state.userStars;
-        let itemsStart = this.state.itemsEnd - this.state.pageIncrement;
         let itemsEnd = this.state.itemsEnd - this.state.pageIncrement;
+        let itemsStart = itemsEnd - this.state.pageIncrement;
         let paginationStars = userStars.slice(itemsStart, itemsEnd);
         this.setState({
             temsStart: itemsStart,
