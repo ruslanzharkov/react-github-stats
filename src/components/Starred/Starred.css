@@ -21,10 +21,10 @@
 
 .button-starred {
     width: 150px;
-    height: 30px;
+    height: 32px;
     color: #fff;
     background: #1277eb;
-    border: 0;
+    border: none;
     border-radius: 3px;
     transition: 0.2s;
     cursor: pointer;

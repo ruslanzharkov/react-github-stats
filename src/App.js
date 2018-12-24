@@ -12,8 +12,8 @@ class App extends Component {
               <Provider store={store}>
                 <BrowserRouter>
                   <Switch>
-                        <Route exact path="/" component={HomePage}/>
-                        <Route path="/starred" component={StarredContainer}/>
+                        <Route exact path="/another" component={HomePage}/>
+                        <Route path="/" component={StarredContainer}/>
                     </Switch>
                 </BrowserRouter>
               </Provider>

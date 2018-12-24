@@ -145,7 +145,7 @@ class Starred extends Component {
             <div className='starred-container'>
                 <div className={'search-container'}>
                     <Input onChange={this.onChange} value={this.state.user} styles={'input-starred'} placeholder='Write github username...'/>
-                    <Button onClick={this.onSubmit} value={'Search user'} styles={'button-starred'}/>
+                    <Button onClick={this.onSubmit} value={'Search...'} styles={'button-starred'}/>
                 </div>
                 {this.renderStarInfo()}
                 <div className={'pagination-buttons'}>
