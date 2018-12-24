@@ -37,12 +37,19 @@ class Starred extends Component {
 
     goNextPage = () => {
         let userStars = this.state.userStars;
-        let paginationStars = userStars.slice(this.state.itemsStart, this.state.itemsEnd);
-        let itemsStart = this.state.itemsEnd;
+        let itemsStart = this.state.itemsStart;
         let itemsEnd = this.state.itemsEnd;
-        itemsEnd += this.state.pageIncrement;
+        let paginationStars;
 
-        if (itemsEnd !== this.state.userStars.length) {
+        paginationStars = userStars.slice(itemsStart, itemsEnd);
+
+        if (itemsStart === 0) {
+            itemsStart = this.state.pageIncrement;
+        } else itemsStart = itemsEnd;
+
+        itemsEnd = itemsStart + this.state.pageIncrement;
+
+        if (itemsEnd < this.state.userStars.length) {
             this.setState({
                 itemsStart: itemsStart,
                 itemsEnd: itemsEnd,
@@ -53,17 +60,23 @@ class Starred extends Component {
 
     goPrevPage = () => {
         let userStars = this.state.userStars;
-        let itemsEnd = this.state.itemsEnd - this.state.pageIncrement;
-        let itemsStart = itemsEnd - this.state.pageIncrement;
+        let paginationStars;
+        let itemsStart = this.state.itemsStart;
+        let itemsEnd = this.state.itemsEnd;
+        
+        itemsEnd = itemsStart;
+        itemsStart = itemsEnd - this.state.pageIncrement;
 
-        if (itemsStart !== 0) {
-            let paginationStars = userStars.slice(itemsStart, itemsEnd);
-            this.setState({
-                temsStart: itemsStart,
-                itemsEnd: itemsEnd,
-                paginationUserStars: paginationStars
-            })
-        }
+        if (itemsStart < 0) 
+            return;
+
+        paginationStars = userStars.slice(itemsStart, itemsEnd);
+        this.setState({
+            itemsStart: itemsStart,
+            itemsEnd: itemsEnd,
+            paginationUserStars: paginationStars
+        })
+        
     };
 
     onChange = (event) => {
