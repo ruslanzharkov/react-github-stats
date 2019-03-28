@@ -7,6 +7,7 @@ class Input extends Component {
                 type="text" 
                 value={this.props.value} 
                 onChange={this.props.onChange} 
+                onKeyPress={this.props.onKeyPress}
                 className={this.props.styles}
                 placeholder={this.props.placeholder}
             />
