@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import Input from '../_common/Input';
 import Button from '../_common/Button';
@@ -16,7 +16,7 @@ class Starred extends Component {
             itemsEnd: 5,
             pageIncrement: 5
         };
-        
+
     }
 
     static getDerivedStateFromProps(nextProps, prevState) {
@@ -25,7 +25,7 @@ class Starred extends Component {
                 userStars: nextProps.userStars
             }
         }
-            
+
         return null;
     }
 
@@ -63,11 +63,11 @@ class Starred extends Component {
         let paginationStars;
         let itemsStart = this.state.itemsStart;
         let itemsEnd = this.state.itemsEnd;
-        
+
         itemsEnd = itemsStart;
         itemsStart = itemsEnd - this.state.pageIncrement;
 
-        if (itemsStart < 0) 
+        if (itemsStart < 0)
             return;
 
         paginationStars = userStars.slice(itemsStart, itemsEnd);
@@ -76,7 +76,7 @@ class Starred extends Component {
             itemsEnd: itemsEnd,
             paginationUserStars: paginationStars
         })
-        
+
     };
 
     onChange = (event) => {
@@ -116,20 +116,26 @@ class Starred extends Component {
 
         return (
             <div>
-                {this.state.paginationUserStars.map((item, index) => 
+                {this.state.paginationUserStars.map((item, index) =>
                     <div className="repo-item" key={index}>
                         <div className="content-about">
                             <div className="block">
-                                <div className="repo-name">{item.name}</div>
-                                <div className="repo-image"><img src={item.owner.avatar_url} alt='avatar' className='avatars-github'/></div>
+                                <div>{item.name}</div>
+                                <div className="repo-image"><img src={item.owner.avatar_url} alt='avatar'
+                                                                 className='avatars-github'/></div>
                             </div>
                             <div className="block">
                                 <div className="repo-name">
-                                    <span className="stars">&#10029;</span> {item.stargazers_count}
+                                    <div className="stars">&#11089;</div>
+                                    <div className={'start-title'}>
+                                        Star
+                                    </div>
+
+                                    <div className={'start-count'}>{item.stargazers_count}</div>
                                 </div>
                             </div>
                             <div className="block">
-                                <div className="repo-name">
+                                <div>
                                     <Link url={item.svn_url}>Link to repo</Link>
                                 </div>
                             </div>
@@ -141,10 +147,11 @@ class Starred extends Component {
     }
 
     render() {
-        return(
+        return (
             <div className='starred-container'>
                 <div className={'search-container'}>
-                    <Input onChange={this.onChange} onKeyPress={this.onSubmit} value={this.state.user} styles={'input-starred'} placeholder='Write github username...'/>
+                    <Input onChange={this.onChange} value={this.state.user} styles={'input-starred'}
+                           placeholder='Write github username...'/>
                     <Button onClick={this.onSubmit} value={'Find'} styles={'button-starred'}/>
                 </div>
                 {this.renderStarInfo()}
