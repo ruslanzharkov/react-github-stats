@@ -125,13 +125,14 @@ class Starred extends Component {
                                                                  className='avatars-github'/></div>
                             </div>
                             <div className="block">
-                                <div className="repo-name">
-                                    <div className="stars">&#11089;</div>
-                                    <div className={'start-title'}>
-                                        Star
+                                <div className={'repo-name'}>
+                                    <div className={'repo'}>
+                                        <div className="stars">&#11089;</div>
+                                        <div className={'start-title'}>
+                                            Star
+                                        </div>
+                                        <div className={'start-count'}>{item.stargazers_count}</div>
                                     </div>
-
-                                    <div className={'start-count'}>{item.stargazers_count}</div>
                                 </div>
                             </div>
                             <div className="block">

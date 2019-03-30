@@ -20,9 +20,9 @@
 }
 
 .input-starred:focus {
-    -webkit-box-shadow: 0px 1px 12px 5px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px 1px 12px 5px rgba(0,0,0,0.75);
-    box-shadow: 0px 1px 12px 5px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 0px 1px 12px 5px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 1px 12px 5px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 1px 12px 5px rgba(0, 0, 0, 0.75);
 }
 
 .button-starred {
@@ -53,19 +53,26 @@
     align-items: center;
     float: left;
     margin-bottom: 10px;
-    border-radius: 3px;
-    border: 1px solid rgba(27,31,35,.2);
     background-color: #eff3f6;
-    background-image: linear-gradient(-180deg,#fafbfc,#eff3f6 90%);
+    background-image: linear-gradient(-180deg, #fafbfc, #eff3f6 90%);
 }
 
 .repo-image {
     float: right;
 }
 
+.repo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 10px;
+    border-radius: 3px;
+    border: 1px solid rgba(27, 31, 35, .2);
+}
+
 .repo-item {
     background: #fff;
-    box-shadow: 0 10px 50px rgba(27,31,35,0.07);
+    box-shadow: 0 10px 50px rgba(27, 31, 35, 0.07);
     border-radius: 10px;
     height: 200px;
     width: 600px;
@@ -74,9 +81,9 @@
 }
 
 .repo-item:hover {
-    -webkit-box-shadow: 0px 2px 35px 0px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px 2px 35px 0px rgba(0,0,0,0.75);
-    box-shadow: 0px 2px 35px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 0px 2px 35px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 2px 35px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 2px 35px 0px rgba(0, 0, 0, 0.75);
 }
 
 .block {
@@ -87,6 +94,15 @@
     display: inline-block;
     margin-left: 5px;
     font-size: 25px;
+}
+
+.start-title {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.start-count {
+    margin-right: 5px;
 }
 
 .content-about {
